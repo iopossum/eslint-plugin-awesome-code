@@ -19,8 +19,6 @@ Add `plugins` section and specify eslint-plugin-awesome-code as a plugin.
 
 - [awesome-code/jsx-no-inline-function-as-prop](docs/rules/jsx-no-inline-function-as-prop.md): Prevent `inline function` as JSX prop value
 
-```
-
 ## Recommended
 
 This plugin exports a `recommended` configuration that enforce React good practices.
