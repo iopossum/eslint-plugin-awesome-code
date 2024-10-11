@@ -1,0 +1,11 @@
+{
+  "name": "eslint-plugin-awesome-code",
+  "version": "0.1.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "imikhayloff@gmail.com",
+  "license": "ISC"
+}
