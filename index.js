@@ -248,13 +248,7 @@ const configs = {
       "@typescript-eslint/no-explicit-any": 1,
       "@typescript-eslint/no-empty-object-type": 0,
       "@typescript-eslint/naming-convention": [
-        1,
-
-        {
-          selector: "variable",
-          format: ["StrictPascalCase"],
-          filter: { regex: "Context$", match: true },
-        },
+        1,        
         {
           selector: "variable",
           format: ["camelCase", "UPPER_CASE", "PascalCase"],

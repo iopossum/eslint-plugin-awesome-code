@@ -174,12 +174,6 @@ List of included plugins:
   "@typescript-eslint/no-empty-object-type": 0,
   "@typescript-eslint/naming-convention": [
   1,
-
-  {
-    selector: "variable",
-    format: ["StrictPascalCase"],
-    filter: { regex: "Context$", match: true },
-  },
   {
     selector: "variable",
     format: ["camelCase", "UPPER_CASE", "PascalCase"],
