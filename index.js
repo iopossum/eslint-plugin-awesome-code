@@ -1,10 +1,12 @@
 "use strict";
 const eslintVersion = require('eslint/package.json').version; 
 
-var isLegacyVarsion = eslintVersion.charAt(0) < 9;
+// Parse major version as a number for correct comparison (e.g. "10" -> 10)
+var isLegacyVersion = parseInt(eslintVersion, 10) < 9;
 
-if (isLegacyVarsion) {
+if (isLegacyVersion) {
   // Fix eslint shareable config (https://github.com/eslint/eslint/issues/3458)
+  // Only needed for ESLint < 9 (eslintrc-based configs)
   require("@rushstack/eslint-patch/modern-module-resolution");
 }
 
@@ -359,7 +361,7 @@ const plugin = {
   configs,
 };
 
-if (!isLegacyVarsion) {
+if (!isLegacyVersion) {
   const reactPlugin = require("eslint-plugin-react");
   const reactHooksPlugin = require("eslint-plugin-react-hooks");
   const noInlineStylesPlugin = require("eslint-plugin-no-inline-styles");
@@ -396,7 +398,10 @@ if (!isLegacyVarsion) {
           ...configs["recommended-all"].rules,
         },
         languageOptions: {
-          parserOptions: configs["recommended-all"].parserOptions,
+          parserOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module",
+          },
         },
       },
       configs["recommended-all"].overrides.map(v => ({

@@ -1,3 +1,4 @@
 .pnp*
 .yarn/unplugged
 .yarn/install-state.gz
+.npmrc
